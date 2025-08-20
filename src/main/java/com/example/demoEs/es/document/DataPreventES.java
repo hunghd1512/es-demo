@@ -80,7 +80,9 @@ public class DataPreventES {
     @JsonProperty("status")
     private String status;
 
-
+    // Suggestion fields for autocomplete functionality
+    @Field(type = FieldType.Completion)
+    private String[] suggest;
 
     public enum Category {
         BLOCKING_INFORMATION,

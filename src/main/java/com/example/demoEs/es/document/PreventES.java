@@ -33,4 +33,13 @@ public class PreventES {
     @Field(type = FieldType.Nested)
     private List<OrganizationDataEntryES> organizationsES;
 
+    // Suggestion fields for autocomplete functionality
+    @Field(type = FieldType.Completion)
+    private String[] suggestRequestingPersonOrUnit;
+
+    @Field(type = FieldType.Completion)
+    private String[] suggestSummary;
+
+    @Field(type = FieldType.Completion)
+    private String[] suggestDocumentNumber;
 }

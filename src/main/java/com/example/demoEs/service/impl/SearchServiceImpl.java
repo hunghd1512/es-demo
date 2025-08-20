@@ -52,7 +52,7 @@ public class SearchServiceImpl implements SearchService {
 
         NativeQueryBuilder nativeQueryBuilder = new NativeQueryBuilder();
 
-        Pageable pageable = PageRequest.of(0, 10)
+        Pageable pageable = PageRequest.of(0, 20)
                 .withSort(Sort.by(Sort.Direction.DESC, "id"));
 //        Highlight thường để ui xử lý , để Be xử lý sẽ nặng về response
 
@@ -69,6 +69,5 @@ public class SearchServiceImpl implements SearchService {
 
         SearchHits<PreventES> preventESSearchHit = elasticsearchOperations.search(nativeQueryBuilder.build(), PreventES.class);
         return preventESSearchHit.getSearchHits().stream().map(SearchHit::getContent).collect(Collectors.toList());
-
     }
 }

@@ -42,7 +42,14 @@
 ## 4. Suggestion
 
 - Hỗ trợ đề xuất kết quả tìm kiếm gần đúng hoặc tự động hoàn thành.
+   - Completion Suggestion:
+    Cung cấp gợi ý tự động dựa trên prefix nhập vào, rất nhanh và tối ưu cho autocomplete.
 
+   - Term Suggestion:
+    Gợi ý các từ gần đúng (korection lỗi chính tả) dựa trên từ khóa nhập vào.
+
+   - Phrase Suggestion:
+    Gợi ý câu hoặc cụm từ hợp lý hơn dựa trên phân tích ngữ cảnh.
 ---
 
 ## 5. Analyze Setting
@@ -69,5 +76,11 @@
 - Cần chuẩn hóa và chỉnh sửa dữ liệu để tối ưu kết quả tìm kiếm.
 
 ---
+## 8. Tối ưu Query trong Elasticsearch
 
+### 1. Tối ưu bằng Routing
+
+- **Routing** giúp gom các document liên quan (ví dụ: cùng `userId`, `orderId`...) vào **cùng một shard**, nhờ đó khi truy vấn có thể **giới hạn shard cần tìm**, tăng tốc độ truy vấn đáng kể.
+
+- Khi index dữ liệu, nếu cần nhóm các bản ghi liên quan, **hãy chỉ định giá trị routing**:
 **Chúc bạn triển khai Elasticsearch hiệu quả và thành công!**
