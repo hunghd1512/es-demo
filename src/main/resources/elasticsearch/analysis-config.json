@@ -1,0 +1,19 @@
+{
+  "analysis": {
+    "analyzer": {
+      "nds": {
+        "type": "custom",
+        "tokenizer": "standard",
+        "filter": [
+          "lowercase",
+          "asciifolding"
+        ]
+      },
+      "folding_exact_match_analyzer": {
+        "type": "custom",
+        "tokenizer": "keyword",
+        "filter": ["lowercase", "asciifolding"]
+      }
+    }
+  }
+}

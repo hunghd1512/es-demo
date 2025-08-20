@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: demoEs
+  datasource:
+    url: ${database.url}
+    username: ${database.username}
+    password: ${database.password}
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 30000 # 30s
+      maximum-pool-size: 10
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 10
+          order_insert: true
+          order_updates: true
+          time_zone: Asia/Ho_Chi_Minh
